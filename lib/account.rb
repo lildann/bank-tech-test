@@ -3,19 +3,21 @@ class Account
 
   def initialize(balance = 0)
     @balance = balance
+    @statement = []
   end
 
-  def credit(amount, date)
-    @balance += amount
+  def credit(amount, date = Time.now.strftime("%d/%m/%Y"))
+    balance = @balance += amount
+    @statement << "#{date} || #{amount}.00 || || #{balance}.00"
+    return balance
   end
 
-  def debit(amount, date)
+  def debit(amount, date = Time.now.strftime("%d/%m/%Y"))
     @balance -= amount
   end
 
   def print_statement
-    
-    "10/01/2023 || 1000.00 || || 1000.00"
+   @statement.join("")
   end
 
 end
