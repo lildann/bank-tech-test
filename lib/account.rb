@@ -19,12 +19,12 @@ class Account
   end
 
   def statement
-    @statement.join("")
+    @statement.join
   end
 
   def print_statement
-   summary = "#{print_statement_banner}\n" + "#{@statement.reverse.join("\n")}"
-   print summary
+    summary = "#{print_statement_banner}\n" + @statement.reverse.join("\n").to_s
+    print summary
   end
 
   def print_statement_banner
