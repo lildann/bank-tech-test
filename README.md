@@ -1,12 +1,35 @@
 # Bank tech test
 
-Today, you'll practice doing a tech test.
+### Set up
 
-For most tech tests, you'll essentially have unlimited time.  This practice session is about producing the best code you can when there is a minimal time pressure.
+* Fork and clone this repo
+* Run `bundle install`
+* To test run `rspec`
+* Run `irb -r ./lib/account.rb`
+* Interact with the instance of Account via the following methods:
+  * `account.credit_blance(amount)`
+  * `account.debit_blance(amount)`
+  * `account.print_statement`
+  * the current date will be added to credit or debit actions unless otherwise specified.
 
-You'll get to practice your OO design and TDD skills.
+### Test planning table
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
+INPUT                 | OUTPUT
+account.credit(1000)  | 1000
+account.credit(2000)  | 3000
+account.debit(500)    | 500
+
+### Approach
+
+* Each instance of the account starts with a balance of zero. 
+* When the user deposits money, this changes the balance, and pushes the date, the credit value and the current balance (as a formatted string) to the statement array. 
+* The same happens for a withdrawal, only the string that is pushed to the statement array has the debit value and updated balance, as well as the date of the withdrawal. 
+* To get a statement, the user must call the method print_statement() for an overview of their account activity. 
+
+### Screenshot of running app
+
+![IRB](images/bank-tech-test.png)
+
 
 ## Specification
 
@@ -31,8 +54,3 @@ date || credit || debit || balance
 13/01/2023 || 2000.00 || || 3000.00
 10/01/2023 || 1000.00 || || 1000.00
 ```
-
-INPUT                 | OUTPUT
-account.credit(1000)  | 1000
-account.credit(2000)  | 3000
-account.debit(500)    | 500
