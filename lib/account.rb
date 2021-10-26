@@ -13,7 +13,9 @@ class Account
   end
 
   def debit(amount, date = Time.now.strftime("%d/%m/%Y"))
-    @balance -= amount
+    balance = @balance -= amount
+    @statement << "#{date} || || #{amount}.00 || #{balance}.00"
+    return balance
   end
 
   def print_statement
