@@ -19,4 +19,8 @@ describe Account do
     expect(account.debit(500, "14/01/2023")).to eq(2500)
   end
 
+  it "should print a statement showing the date, amount credited / debited, and the balance" do
+    account.credit(1000, "10/01/2023")
+    expect(account.print_statement).to eq("10/01/2023 || 1000.00 || || 1000.00")
+  end
 end

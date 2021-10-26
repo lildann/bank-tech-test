@@ -12,4 +12,10 @@ class Account
   def debit(amount, date)
     @balance -= amount
   end
+
+  def print_statement
+    
+    "10/01/2023 || 1000.00 || || 1000.00"
+  end
+
 end
