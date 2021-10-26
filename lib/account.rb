@@ -6,6 +6,6 @@ class Account
   end
 
   def credit(amount, date)
-    @balance += 1000
+    @balance += amount
   end
 end
