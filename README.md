@@ -32,5 +32,7 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
-
-
+INPUT                 | OUTPUT
+account.credit(1000)  | 1000
+account.credit(2000)  | 3000
+account.debit(500)    | 500
