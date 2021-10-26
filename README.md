@@ -7,10 +7,10 @@
 * To test run `rspec`
 * Run `irb -r ./lib/account.rb`
 * Interact with the instance of Account via the following methods:
-  * `account.credit_blance(amount)`
-  * `account.debit_blance(amount)`
+  * `account.credit_blance(amount, date)`
+  * `account.debit_blance(amount, date)`
   * `account.print_statement`
-  * the current date will be added to credit or debit actions unless otherwise specified.
+  * NOTE: the current date will be added to credit or debit actions unless otherwise specified.
 
 ### Test planning table
 
