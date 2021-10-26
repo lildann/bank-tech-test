@@ -15,6 +15,7 @@
 ### Test planning table
 
 INPUT                 | OUTPUT
+----------------------|--------
 account.credit(1000)  | 1000
 account.credit(2000)  | 3000
 account.debit(500)    | 500
