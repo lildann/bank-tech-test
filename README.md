@@ -28,7 +28,7 @@ account.debit(500)    | 500
 
 ### Screenshot of running app
 
-![IRB](images/bank-tech-test.png)
+![IRB](images/bank-tech.png)
 
 
 ## Specification
