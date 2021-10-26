@@ -21,12 +21,22 @@ describe Account do
 
   it "should print a statement showing the date, amount credited, and the balance" do
     account.credit(1000, "10/01/2023")
-    expect(account.print_statement).to eq("10/01/2023 || 1000.00 || || 1000.00")
+    expect(account.statement).to eq("10/01/2023 || 1000.00 || || 1000.00")
   end
-
 
   it "should print a statement showing the date, amount debited, and the balance" do
     account.debit(500, "14/01/2023")
-    expect(account.print_statement).to eq("14/01/2023 || || 500.00 || -500.00")
+    expect(account.statement).to eq("14/01/2023 || || 500.00 || -500.00")
+  end
+
+  it "should print a full statement showing the banner, date, amount credited / debited, and the balance" do
+    account.credit(1000, "10/01/2023")
+    account.credit(2000, "13/01/2023")
+    account.debit(500, "14/01/2023")
+    expect { account.print_statement }.to output.to_stdout
+  end
+
+  it "should print a statement banner" do
+    expect(account.print_statement_banner).to eq("date || credit || debit || balance")
   end
 end

@@ -18,8 +18,17 @@ class Account
     return balance
   end
 
+  def statement
+    @statement.join("")
+  end
+
   def print_statement
-   @statement.join("")
+   summary = "#{print_statement_banner}\n" + "#{@statement.reverse.join("\n")}"
+   print summary
+  end
+
+  def print_statement_banner
+    "date || credit || debit || balance"
   end
 
 end
