@@ -23,8 +23,8 @@ account.debit(500)    | 2500
 ### Approach
 
 * Each instance of the account starts with a balance of zero. 
-* When the user deposits money, this changes the balance, and pushes the date, the credit value and the current balance (as a formatted string) to the statement array. 
-* The same happens for a withdrawal, only the string that is pushed to the statement array has the debit value and updated balance, as well as the date of the withdrawal. 
+* When the user deposits money, this changes the balance, and a new deposit transaction is instantiated, which is pushed to the transactions array
+* The same happens for a withdrawal, only a new withdrawal transaction is instantiated and pushed to the transactions array.
 * To get a statement, the user must call the method print_statement() for an overview of their account activity. 
 
 ### Screenshot of running app
