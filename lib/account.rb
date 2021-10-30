@@ -13,14 +13,14 @@ class Account
     # but need to access the variables in this method scope
     # waht's a good way to do this?
     @transactions << transaction
-    return sprintf "%.2f", balance
+    return balance
   end
 
   def debit_balance(amount, date = Time.now.strftime("%d/%m/%Y"))
     balance = @balance -= amount
     transaction = Transaction.new(:withdrawal, date, amount, balance)
     @transactions << transaction
-    return sprintf "%.2f", balance
+    return balance
   end
 
   def print_statement
